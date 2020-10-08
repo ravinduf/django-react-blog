@@ -27,4 +27,29 @@ class BlogPost(models.Model):
     day = models.CharField(max_length=2)
     content = models.TextField()
     date_created = models.DateTimeField(default=datetime.now, blank=True)
+
+    def save(self, *args, **kwargs):
+        original_slug = slugify(self.title)
+        slug = original_slug
+        queryset = BlogPost.objects.all().filter(slug__iexact=original_slug).count())
+
+        count = 1
+        
+        while(BlogPost.objects.all().filter(slug__iexact=slug).count()):
+            slug = original_slug + '-' + str(count)
+            count += 1
+        
+        self.slug = slug
+
+        if self.featured:
+            try:
+                temp = BlogPost.objects.get(featured=True)
+                if self != temp:
+                    temp.featured = False
+                    temp.save()
+            except BlogPost.DoesNotExist:
+                pass
+
+        super(BlogPost, self).save(*args, **kwargs)
+
     
