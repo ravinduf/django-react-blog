@@ -26,6 +26,7 @@ class BlogPost(models.Model):
     month = models.CharField(max_length=3)
     day = models.CharField(max_length=2)
     content = models.TextField()
+    featured = models.BooleanField(default=True)
     date_created = models.DateTimeField(default=datetime.now, blank=True)
 
     def save(self, *args, **kwargs):
