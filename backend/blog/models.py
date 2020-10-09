@@ -50,6 +50,11 @@ class BlogPost(models.Model):
             except BlogPost.DoesNotExist:
                 pass
 
-        super(BlogPost, self).save(*args, **kwargs)
+        # super(BlogPost, self).save(*args, **kwargs)
+        super().save(*args, **kwargs)
 
+    def __str__(self):
+        return self.title
+
+    
     
