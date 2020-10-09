@@ -19,4 +19,9 @@ class BlogPostDetailView(RetrieveAPIView):
     serializer_class = BlogPostSerializer
     lookup_field = 'slug'
     permission_classes = (permissions.AllowAny, )
-    
+
+class BlogPostFeaturedView(ListAPIView):
+    queryset = BlogPost.objects.all().filter(featured=True)
+    serializer_class = BlogPostSerializer
+    lookup_field = 'slug'
+    permission_classes = (permissions.AllowAny, )
