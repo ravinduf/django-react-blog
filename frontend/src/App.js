@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowerRouter as Router, Route, Switch} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 import Layout from './HOC/Layout'
 import Blog from "./components/Blog"
@@ -10,6 +10,7 @@ import Home from "./components/Home"
 
 function App() {
     return (
+       
         <Router>
             <Layout>
                 <Switch>
@@ -23,4 +24,4 @@ function App() {
     )
 }
 
-export default App
+export default App;
