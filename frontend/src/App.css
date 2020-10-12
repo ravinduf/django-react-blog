@@ -1,0 +1,16 @@
+.navBrandStyle {
+    font-size: 34px;
+    margin-left: 50px;
+}
+
+.navLinkStyle {
+    font-size: 20px;
+    margin: '8px 20px 0px';
+    color: white;
+    text-decoration: 'none';
+}
+
+.navLinkStyle:hover {
+    color: #cccccc;
+    opacity: 0.8;
+}
