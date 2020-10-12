@@ -3,14 +3,21 @@
     margin-left: 50px;
 }
 
+.navLinks {
+    display: flex;
+    justify-content: space-around;
+    width: 20%;
+}
+
 .navLinkStyle {
     font-size: 20px;
-    margin: '8px 20px 0px';
     color: white;
-    text-decoration: 'none';
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 .navLinkStyle:hover {
     color: #cccccc;
     opacity: 0.8;
+    text-decoration: none;
 }
