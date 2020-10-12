@@ -3,6 +3,7 @@ import { Nav, Navbar, } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 const NavbarComponent = () => {
+
     return (
         <div>
            <Navbar bg="primary" variant="dark" expand="lg">
@@ -10,7 +11,7 @@ const NavbarComponent = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto" >
-                            <Link style={NavLinkStyle} to="/">Home</Link>
+                            <Link style={NavLinkStyle} to="/" >Home</Link>
                             <Link style={NavLinkStyle} to="/blog">Blog</Link>
                    
                         </Nav>
@@ -31,7 +32,7 @@ const NavLinkStyle = {
     margin: ' 8px 20px 0px',
     color: 'white',
     textDecoration: 'none',
-    '&:hover': {
+    '&hover': {
         textDecoration: 'underline'
     }
 }
