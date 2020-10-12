@@ -1,5 +1,6 @@
 import React from 'react'
 import { Nav, Navbar, } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 const NavbarComponent = () => {
     return (
@@ -9,8 +10,8 @@ const NavbarComponent = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
-                            <Nav.Link style={NavLinkStyle} href="#home">Home</Nav.Link>
-                            <Nav.Link style={NavLinkStyle} href="#link">Link</Nav.Link>
+                            <Link style={NavLinkStyle} to="/">Home</Link>
+                            <Link style={NavLinkStyle} to="/blog">Blog</Link>
                    
                         </Nav>
                     
@@ -20,15 +21,18 @@ const NavbarComponent = () => {
     )
 }
 
+
 const NavBrandStyle = {
     fontSize: '34px',
     marginLeft: '50px'
 }
 
 const NavLinkStyle = {
-    fontSize: '18px',
-    marginRight: '10px'
-
+    fontSize: '20px',
+    marginRight: '10px',
+    marginTop: '8px',
+    color: 'white',
+    textDecoration: 'none'
 }
 
 export default NavbarComponent
