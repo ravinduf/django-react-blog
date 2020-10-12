@@ -1,32 +1,34 @@
 import React from 'react'
+import { Nav, Navbar, } from 'react-bootstrap'
 
-const Navbar = () => {
+const NavbarComponent = () => {
     return (
         <div>
-           <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Features</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Pricing</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+           <Navbar bg="dark" variant="dark" expand="lg">
+                <Navbar.Brand href="#home" style={NavBrandStyle} >Blog</Navbar.Brand>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="mr-auto">
+                            <Nav.Link style={NavLinkStyle} href="#home">Home</Nav.Link>
+                            <Nav.Link style={NavLinkStyle} href="#link">Link</Nav.Link>
+                   
+                        </Nav>
+                    
+                </Navbar.Collapse>
+            </Navbar>
         </div>
     )
 }
 
-export default Navbar
+const NavBrandStyle = {
+    fontSize: '34px',
+    marginLeft: '50px'
+}
+
+const NavLinkStyle = {
+    fontSize: '18px',
+    marginRight: '10px'
+
+}
+
+export default NavbarComponent
