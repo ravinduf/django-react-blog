@@ -1,20 +1,24 @@
 import React from 'react'
-import { Jumbotron, Button } from 'react-bootstrap'
+import { Jumbotron, Button, Container } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
     return (
-        <div>
+        <Container className="mt-5">
             <Jumbotron>
-                <h1>Hello, world!</h1>
+                <h1>Blog-World</h1>
                 <p>
-                    This is a simple hero unit, a simple jumbotron-style component for calling
-                    extra attention to featured content or information.
+                    We write awesome blog article about various topics
                 </p>
-                <p>
-                    <Button variant="primary">Learn more</Button>
+                <hr/>
+                <p> 
+                    Click the below button to check out our awesome blog<br/><br/>
+                    
+                    <Link to="/blog"><Button variant="primary">Check out our blog</Button></Link>
+                    
                 </p>
             </Jumbotron>
-        </div>
+        </Container >
     )
 }
 
