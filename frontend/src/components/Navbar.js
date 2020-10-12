@@ -22,19 +22,5 @@ const NavbarComponent = () => {
     )
 }
 
-// const NavBrandStyle = {
-//     fontSize: '34px',
-//     marginLeft: '50px'
-// }
-
-// const NavLinkStyle = {
-//     fontSize: '20px',
-//     margin: ' 8px 20px 0px',
-//     color: 'white',
-//     textDecoration: 'none',
-//     '&hover': {
-//         textDecoration: 'underline'
-//     }
-// }
 
 export default NavbarComponent
