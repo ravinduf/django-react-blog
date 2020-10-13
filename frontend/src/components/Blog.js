@@ -52,8 +52,8 @@ const Blog = () => {
                 <div className="col-md-6">
                     <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                         <div className="col p-4 d-flex flex-column position-static">
-                            <strong className="d-inline-block mb-2 text-primary">{blogPost.title}</strong>
-                            {/* <h3 className="mb-0"></h3> */}
+                            <strong className="d-inline-block mb-2 text-info">{blogPost.category}</strong>
+                            <h3 className="mb-0">{blogPost.title}</h3>
                             <div className="mb-1 text-muted">{blogPost.month}&nbsp;{blogPost.day}</div>
                             <p className="card-text mb-auto">{blogPost.excerpt}</p>
                             <Link to={`/blog/${blogPost.slug}`} className="stretched-link">Continue reading</Link>
@@ -81,6 +81,8 @@ const Blog = () => {
         width: '100%',
         float: 'right'
     }
+
+    
     return (
         <Container className="mt-3">
             <div className="py-1 mb-2">
