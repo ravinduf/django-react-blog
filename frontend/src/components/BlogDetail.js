@@ -1,9 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 const BlogDetail = () => {
 
     const [blog, setBlog] = useState({});
+
+    useEffect(() => {
+        
+
+    }, [props.match.params.id]);
     const createBlog = () => {
         return {__html: blog.content }
     };
