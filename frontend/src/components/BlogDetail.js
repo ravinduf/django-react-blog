@@ -31,9 +31,9 @@ const BlogDetail = (props) => {
 
     return (
         <Container className="mt-3">
-            <h1 className="display-2"></h1>
-            <h2 className="text-muted mt-3">Category: category</h2>
-            <h4>month day</h4>
+            <h1 className="display-3">{blog.title}</h1>
+            <h2 className="text-muted mt-3">Category:&nbsp; {blog.category}</h2>
+            <h4>{blog.month} {blog.day}</h4>
 
             <div className="mt-5 mb-5" dangerouslySetInnerHTML={createBlog()} />
 
