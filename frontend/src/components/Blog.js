@@ -62,12 +62,12 @@ const Blog = () => {
                 </Nav>
             </div>
 
-            <Jumbotron className="p-4 p-md-5 text-white bg-dark">
+            <Jumbotron className="p-4 p-md-5 text-black bg-light">
                 <div className="col-md-6 ">
                     <h1 className="display-4 font-italic">{featuredBlog.title}</h1>
                     <p className="lead my-3">{featuredBlog.excerpt}</p>
                     <p className="lead mb-0">
-                        <Link to={`/blog/${featuredBlog.slug}`} className="text-white font-weight-bold">
+                        <Link to={`/blog/${featuredBlog.slug}`} className="text-info font-weight-bold">
                             Continue reading....
                         </Link>
                     </p>
