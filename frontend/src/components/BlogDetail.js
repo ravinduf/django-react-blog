@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Container } from 'react-bootstrap'
-
+import { Link } from 'react-router-dom'
 const BlogDetail = () => {
 
     const [blog, setBlog] = useState({});
@@ -15,6 +15,8 @@ const BlogDetail = () => {
             <h4>month day</h4>
 
             <div className="mt-5 mb-5" dangerouslySetInnerHTML={createBlog()} />
+
+            <p className='lead mb-5'><Link to="/blog" className="font-weight-bold">Back to blogs</Link></p>
         </Container>
     )
 }
