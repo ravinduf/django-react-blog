@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import { Container, Nav } from 'react-bootstrap'
+import { Container, Nav, Jumbotron } from 'react-bootstrap'
 
 const Blog = () => {
     const [blogs, setBlogs] = useState([]);
@@ -44,7 +44,7 @@ const Blog = () => {
 
     return (
         <Container className="mt-3">
-            <div className=" py-1 mb-2">
+            <div className="py-1 mb-2">
                 <Nav className="d-flex justify-content-between">
                     <Link className="p-2 text=muted" to="/category/world">World</Link>
                     <Link className="p-2 text=muted" to="/category/technology">Technology</Link>
@@ -61,6 +61,19 @@ const Blog = () => {
 
                 </Nav>
             </div>
+
+            <Jumbotron className="p-4 p-md-5 text-white bg-dark">
+                <div className="col-md-6 ">
+                    <h1 className="display-4 font-italic">{featuredBlog.title}</h1>
+                    <p className="lead my-3">{featuredBlog.excerpt}</p>
+                    <p className="lead mb-0">
+                        <Link to={`/blog/${featuredBlog.slug}`} className="text-white font-weight-bold">
+                            Continue reading....
+                        </Link>
+                    </p>
+                </div>
+            </Jumbotron>
+            
         </Container>
     )
 }
