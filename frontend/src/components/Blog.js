@@ -65,11 +65,12 @@ const Blog = () => {
     };
 
     const imgBlock = {
-        width: '50%'
+        width: '50%',
+        
     }
 
     const imgStyle = {
-        height: '30vh',
+        height: '100%',
         width: '100%',
         float: 'right'
     }
