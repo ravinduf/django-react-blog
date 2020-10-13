@@ -1,17 +1,33 @@
 import React, { useState, useEffect } from 'react'
 import { Container } from 'react-bootstrap'
+import axios from 'axios'
 import { Link } from 'react-router-dom'
-const BlogDetail = () => {
+const BlogDetail = (props) => {
 
     const [blog, setBlog] = useState({});
 
     useEffect(() => {
-        
+        const slug = props.match.params.id;
+
+        const fetchData = async () => {
+            try {
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/blog/${slug}`);
+                setBlog(res.data);
+            }
+            catch (err){
+                console.log(err);
+            }
+        }
+
+        fetchData();
 
     }, [props.match.params.id]);
+     
     const createBlog = () => {
         return {__html: blog.content }
     };
+
+    
 
     return (
         <Container className="mt-3">
