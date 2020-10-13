@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Container, Nav } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 
 const Category = (props) => {
     
+    const [blogs, setBlogs] = useState({});
+
+    useEffect(() => {
+
+    }, [props.match.params.id])
+
     const capitalizeFirstLetter = (word) => {
         if (word)
             return word.charAt(0).toUpperCase() + word.slice(1);
