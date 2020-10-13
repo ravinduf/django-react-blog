@@ -1,14 +1,40 @@
 import React, { useEffect, useState } from 'react'
 import { Container, Nav } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 
 const Category = (props) => {
     
-    const [blogs, setBlogs] = useState({});
+    const [blogs, setBlogs] = useState([]);
+    const [category, setCategory] = useState('');
 
     useEffect(() => {
+        const category = capitalizeFirstLetter(props.match.params.id);
+        setCategory(category);
 
+        const config = {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }
+
+
+        const fetchData = async () => {
+            try {
+                const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/blog/category`, {category} , config );
+                setBlogs(res.data);
+                
+            }
+            catch (err) {
+                console.log(err);
+            }
+            
+        }
+
+        fetchData();
+        
+        
     }, [props.match.params.id])
 
     const capitalizeFirstLetter = (word) => {
@@ -17,7 +43,7 @@ const Category = (props) => {
         
         return '';
     }
-
+    console.log(blogs)
     return (
         <Container className="mt-3">
             <h4 className="display-4">Category {capitalizeFirstLetter(props.match.params.id)}</h4>
