@@ -27,12 +27,17 @@ const BlogDetail = (props) => {
         return {__html: blog.content }
     };
 
-    
+    const capitalizeFirstLetter = (word) => {
+        if (word)
+            return word.charAt(0).toUpperCase() + word.slice(1);
+        
+        return '';
+    }
 
     return (
         <Container className="mt-3">
             <h1 className="display-3">{blog.title}</h1>
-            <h2 className="text-muted mt-3">Category:&nbsp; {blog.category}</h2>
+            <h2 className="text-muted mt-3">Category:&nbsp; {capitalizeFirstLetter(blog.category)}</h2>
             <h4>{blog.month} {blog.day}</h4>
 
             <div className="mt-5 mb-5" dangerouslySetInnerHTML={createBlog()} />
