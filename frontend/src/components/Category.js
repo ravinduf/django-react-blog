@@ -43,6 +43,16 @@ const Category = (props) => {
         
         return '';
     }
+
+    const imgBlock = {
+        width: '50%'
+    }
+
+    const imgStyle = {
+        height: '30vh',
+        width: '100%',
+        float: 'right'
+    }
     
     const getBlogs = () => {
         let list = [];
@@ -60,7 +70,7 @@ const Category = (props) => {
                             <Link to={`/blog/${blogPost.slug}`} className="stretched-link">Continue reading</Link>
                         </div>
                         <div className="col-auto d-none d-lg-block" style={imgBlock}>
-                            <img className="bd-placeholder-img" src={blogPost.thumbnail} style={imgStyle}></img>
+                            <img className="bd-placeholder-img" src={process.env.REACT_APP_API_URL + blogPost.thumbnail} style={imgStyle}></img>
                         </div>
                     </div>
                 </div>
@@ -69,10 +79,12 @@ const Category = (props) => {
             )
         ));
         
-
-        return list;
+        if (list.length !== 0)
+            return list;
+        else
+            return <h1>No blogs in this category yet</h1>
     };
-    
+    console.log(blogs)
 
     return (
         <Container className="mt-3">
