@@ -3,9 +3,18 @@ import { Container, Nav } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 
-const Category = () => {
+const Category = (props) => {
+    
+    const capitalizeFirstLetter = (word) => {
+        if (word)
+            return word.charAt(0).toUpperCase() + word.slice(1);
+        
+        return '';
+    }
+
     return (
         <Container className="mt-3">
+            <h4 className="display-4">Category {capitalizeFirstLetter(props.match.params.id)}</h4>
             <div className="py-1 mb-2">
                 <Nav className="d-flex justify-content-between">
                     <Link className="p-2 text=muted" to="/category/world">World</Link>
