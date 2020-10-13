@@ -51,7 +51,7 @@ const Blog = () => {
                             <Link to={`/blog/${blogPost.slug}`} className="stretched-link">Continue reading</Link>
                         </div>
                         <div className="col-auto d-none d-lg-block" style={imgBlock}>
-                            <img className="bd-placeholder-img" src={blogPost.thumbnail} style={imgStyle}></img>
+                            <img className="bd-placeholder-img" src={blogPost.thumbnail} style={imgStyle} alt=""></img>
                         </div>
                     </div>
                 </div>
